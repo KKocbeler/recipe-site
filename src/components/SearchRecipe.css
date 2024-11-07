@@ -1,0 +1,63 @@
+.search {
+    min-height: 35vh;
+    position: relative;
+    background: url(../../public/Images/FeaturedRecipe/search-food.jpg);
+    background-position: center;
+    background-size: cover;
+    opacity: .9;
+    background-color: var(--bg-dark);
+}
+
+#basic-addon1{
+    background-color: var(--primary-color);
+    border-right: none;
+}
+
+#input-s{
+    border-left: none;
+}
+
+.search-input {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    text-align: center;
+}
+
+.search-input i {
+    position: absolute;
+    margin-top: 1.55rem;
+    margin-left: 1rem;
+    font-size: 2.2rem;
+    color: var(--effect-color);
+    z-index: 1;
+}
+
+.search-input input {
+    width: 70%;
+    padding: 1.3rem 4rem;
+    border: none;
+    border-radius: .5rem;
+    font-size: 1.8rem;
+    opacity: .9;
+    outline-color: var(--effect-color);
+}
+
+@media (max-width: 1199px) {
+    .search {
+        height: 33vh;
+    }
+}
+
+@media (max-width: 767px) {
+    .search {
+        height: 25vh;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+}
+
