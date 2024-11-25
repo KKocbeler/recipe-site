@@ -6,7 +6,7 @@ import Articles from '../components/Articles'
 const Home = () => {
   return (
     <div>
-        <SearchRecipe />
+        {/* <SearchRecipe /> */}
         <div className='container'>
             <FeaturedRecipe />
             <Articles />
