@@ -8,22 +8,27 @@ const RecipeCard = ({ searchRecipes, loading, error }) => {
     
     return (
         <div id='recipe-card'>
-            {loading && !error && <Loading />}
-
-            {error && <Error />}
-            {searchRecipes && searchRecipes.map((recipe) => (
-                <Link to={`/recipe-details/${(recipe.id)}`} key={recipe.id} className="recipe-link">
-                    <div className="food-card">
-                        <div className="card-image">
-                            <img src={recipe.Image} alt={recipe.Title} />
-                        </div>
-                        <div className="card-main">
-                            <span>Dinner</span>
-                            <h3>{recipe.Title}</h3>
-                        </div>
-                    </div>
-                </Link>
-            ))}
+            {
+                loading ? (
+                    <Loading />
+                ) : error ? (
+                    <Error />
+                ) : (
+                    searchRecipes?.map((recipe) => (
+                        <Link to={`/recipe-details/${(recipe.id)}`} key={recipe.id} className="recipe-link">
+                            <div className="food-card">
+                                <div className="card-image">
+                                    <img src={recipe.Image} alt={recipe.Title} />
+                                </div>
+                                <div className="card-main">
+                                    <span>Dinner</span>
+                                    <h3>{recipe.Title}</h3>
+                                </div>
+                            </div>
+                        </Link>
+                    ))
+                )
+            }
         </div>
     );
 };
