@@ -14,8 +14,8 @@ const FeaturedRecipe = () => {
             <div className="featured-images">
                 <Link to={'/recipes/?q=soup'}>
                     <img src="Images/FeaturedRecipe/Soop.jpg" className='rounded' alt="" />
-                    <button className='featured-btn'>Soups</button>
                 </Link>
+                <button type='button' className='featured-btn'>Soups</button>
             </div>
             <div className="featured-images">
                 <Link to={'/recipes/?q=pasta'}>
