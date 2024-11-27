@@ -2,7 +2,6 @@
     background-image: url(/public/Images/contact-img/contact-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    border: .1rem solid var(--effect-color) ;
     border-radius: 8px;
     margin-top: 5.5svh;
     margin-bottom: 5svh;
@@ -102,7 +101,7 @@
     }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 768px) {
     .contact-main {
         margin: 3rem 0;
         border-radius: 0;
