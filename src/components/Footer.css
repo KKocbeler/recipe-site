@@ -6,18 +6,17 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: var(--secondary-color);
-    padding: 4rem;
+    background: var(--bg-dark);
+    padding: 4rem 2rem 2rem 2rem ;
 }
 
 .footer-sections {
     display: flex;
     justify-content: space-evenly;
-    
 }
 
 .footer-sections h3 a{
-    color: var(--bg-dark);
+    color: rgb(26, 26, 26)
 }
 
 .footer-ul li {
@@ -39,7 +38,7 @@ footer {
 .social-links a {
     padding: 1.5rem;
     border-radius: 99rem;
-    background-color: var(--bg-dark);
+    background-color: var(--effect-color);
     transition: all .4s;
 }
 
@@ -53,7 +52,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     min-height: 8rem;
-    background: var(--bg-dark);
+    background: rgb(26, 26, 26);
     color: var(--light-text-color);
 }
 
