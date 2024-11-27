@@ -44,9 +44,9 @@ li{
 }
 
 .leads {
-    font-size: 3rem;
-    margin-bottom: 1.6rem;
+    font-size: 2.8rem;
     color: #54595e;
+    font-weight: 400;
 }
 
 @media (max-width: 1199px) {
@@ -54,7 +54,7 @@ li{
         font-size: 56.25%;
     }
     .container {
-        padding: 0 10%;
+        padding: 0 6%;
     }
 }
 
