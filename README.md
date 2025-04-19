@@ -6,8 +6,9 @@
 
 ## 🖼️ Screenshots
 
-![Home Page](https://raw.githubusercontent.com/KKocbeler/recipe-site/master/public/img/github-img/home-page.png)
-![Recipe Search](https://raw.githubusercontent.com/KKocbeler/recipe-site/master/public/img/github-img/recipe-search.png)
+![Home Page](https://raw.githubusercontent.com/KKocbeler/recipe-site/master/public/Images/github-img/home-page.png)
+![Search Search](https://raw.githubusercontent.com/KKocbeler/recipe-site/master/public/Images/github-img/search.png)
+![Artcile](https://raw.githubusercontent.com/KKocbeler/recipe-site/master/public/Images/github-img/article.png)
 
 ---
 
