@@ -1,17 +1,18 @@
-import React from 'react'
 import FeaturedRecipe from '../components/FeaturedRecipe'
 import SearchRecipe from '../components/SearchRecipe'
 import Articles from '../components/Articles'
+import HomeSwiper from '../components/HomeSwiper'
 
 const Home = () => {
   return (
-    <div>
-        {/* <SearchRecipe /> */}
+    <>
+        <SearchRecipe />
         <div className='container'>
             <FeaturedRecipe />
             <Articles />
+            <HomeSwiper />
         </div>
-    </div>
+    </>
   )
 }
 
