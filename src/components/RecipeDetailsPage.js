@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import './RecipeDetailsPage.css';
+import './RecipeDetailsPage.scss';
 import { useParams } from 'react-router-dom';
 import Loading from './Pieces/Loading';
 import Error from './Pieces/Error';
 
 const RecipeDetailsPage = () => {
     const { id } = useParams();
-    const tarif = id;
     const [recipe, setRecipe] = useState(null);
-    const [error, setError] = useState(false);
+    const [error, setError] = useState();
     const [loading, setLoading] = useState(false)
 
 
@@ -16,11 +15,12 @@ const RecipeDetailsPage = () => {
     useEffect(() => {
         const fetchData = async () => {
             setLoading(true)
-            const url = `https://food-recipes-with-images.p.rapidapi.com/?q=${tarif}`;
+            setError(null)
+            const url = `https://food-recipes-with-images.p.rapidapi.com/?q=${id}`;
             const options = {
                 method: 'GET',
                 headers: {
-                    'X-RapidAPI-Key': `${process.env.REACT_APP_API_KEY}`,
+                    'X-RapidAPI-Key': "52c84b808bmsh3011dd83d5e47a9p1582bbjsnf10e135d46ea",
                     'X-RapidAPI-Host': 'food-recipes-with-images.p.rapidapi.com'
                 }
             };
@@ -33,18 +33,20 @@ const RecipeDetailsPage = () => {
                 }
 
                 const result = await response.json();
-                setLoading(false)
-                setRecipe(result.d[0]);
+                if(result.d[0]) {
+                    setRecipe(result.d[0]);
+                } else {
+                    setError("Recipe")
+                }
             } catch (error) {
-                setError(error.message || 'Bir hata oluştu');
-                console.error(error);
+                setError("Recipe not found")
+            } finally {
+                setLoading(false)
             }
         };
 
         fetchData();
-    }, [tarif]);
-
-    console.log(recipe)
+    }, [id]);
 
     return (
         <div className='container'>
