@@ -9,6 +9,7 @@
 ![Home Page](https://raw.githubusercontent.com/KKocbeler/recipe-site/master/public/Images/github-img/home-page.png)
 ![Search Search](https://raw.githubusercontent.com/KKocbeler/recipe-site/master/public/Images/github-img/search.png)
 ![Artcile](https://raw.githubusercontent.com/KKocbeler/recipe-site/master/public/Images/github-img/article.png)
+![DietSection](https://raw.githubusercontent.com/KKocbeler/recipe-site/master/public/Images/github-img/diet-section.png)
 
 ---
 
