@@ -1,0 +1,95 @@
+#recipe-card {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 1rem;
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    a {
+        @media (max-width: 1200px) {    
+            &:hover {
+                transform: none;
+            }
+        }
+
+        &:hover {
+            .food-card {
+                .card-image {
+                    
+                    img {
+                        transform: scale(1.01);
+                    }
+                }
+                .card-main {
+                    &::after {
+                        width: 92%;
+                    }
+                }
+            }
+        }
+
+        .food-card {
+            border-radius: 1rem;
+            box-shadow: rgba(204, 119, 61, 0.3) 2px 2px 1px 0px, rgba(204, 119, 61, 0.2) 0px 1px 3px 1px;
+
+            @media (max-width: 1200px) {
+                    border: 1px solid var(--effect-color);
+            }
+
+            .card-image {
+                overflow-x: hidden;
+                img {
+                    display: block;
+                    width: 100%;
+                    aspect-ratio: 4 / 3;
+                    object-fit: cover;
+                    transition: all .5s;
+                    border-top-left-radius: 1rem;
+                    border-top-right-radius: 1rem;
+                }
+            }
+
+            .card-main {
+                position: relative;
+                min-height: 15rem;
+                padding: 1rem 1rem 3rem 1rem;
+                border-bottom-right-radius: 1rem;
+                border-bottom-left-radius: 1rem;
+
+                span {
+                    color: var(--effect-color);
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 2.7rem;
+                    width: 20%;
+                    height: .3rem;
+                    background-color: var(--effect-color);
+                    border-radius: .5rem;
+                    transition: all .5s;
+                }
+
+                > div {
+                    margin-top: 1.2rem;
+                    font-weight: bold;
+                    font-size: 1.6rem;
+                    color: var(--secondary-color);
+                }
+            }
+        }
+    }
+}
+
+
+
