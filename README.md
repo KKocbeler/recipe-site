@@ -48,4 +48,5 @@ cd recipe-site
 npm install
 
 # Start the development server
-npm run dev
+npm start
+
