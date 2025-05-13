@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import './Articles.css'
+import './Articles.scss'
 import { Link } from 'react-router-dom';
 import { RecipeContext } from '../context/recipeContext';
 
@@ -31,26 +31,27 @@ const Articles = () => {
     ]
 
     useEffect(() => {
-        if(recipes) {
-            setFavs(recipes)
+        if(recipes && recipes.length >= 3) {
+            const shuffled = [...recipes].sort(() => 0.5 - Math.random());
+
+            setFavs(shuffled.slice(0, 3));
         }
     }, [recipes])
 
-    console.log(favs)
   return (
     <div className='home-articles-recipes'>
         <div className='article-section'>
-            <h4 className='leads'> Articles </h4>
+            <h2 className='leads'> Articles </h2>
             <div className="articles">
                 {
                     articles?.map((article, index) => (
                         <Link to={'/'} key={index}>
                             <div className="article" >
                                 <div className="article-img">
-                                    <img src={article.image} alt={article.title} />
+                                    <img src={article.image} alt={article.title} loading='lazy'/>
                                 </div>
                                 <div className="article-texture">
-                                    <h5>{article.title}</h5>
+                                    <h3>{article.title}</h3>
                                     <p>{article.description}</p>
                                     <p className='date-article'>{article.date}</p>
                                 </div>
@@ -61,32 +62,18 @@ const Articles = () => {
             </div>  
         </div>
         <div className="fav-recipes-section">
-            <h4><Link className='leads'> Fav Recipes </Link></h4>
+            <h2 className='leads'>Fav Recipes</h2>
             <div className="fav-recipes">
             {
                 favs ? (
-                    <>
-                        <div className='fav-recipes-box'>
-                            <Link to={'/recipe-details/67'}>
-                                <img src={favs[0].Image} alt="" />
-                                <h5>{favs[0].Title}</h5>
-                            </Link>
-                        </div>
-    
-                        <div className='fav-recipes-box'> 
-                            <Link to={'/recipe-details/760'}>
-                                <img src={favs[7].Image} alt="" />
-                                <h5>{favs[7].Title}</h5>
-                            </Link>
-                        </div>
-    
-                        <div className='fav-recipes-box'> 
-                            <Link to={'/recipe-details/855'}>
-                                <img src={favs[11].Image} alt="" />
-                                <h5>{favs[11].Title}</h5>
-                            </Link>
-                        </div>
-                    </>
+                        favs.map((fav, index) => (
+                            <div className='fav-recipes-box' key={index}>
+                                <Link to={`/recipe-details/${fav.Id}`}>
+                                    <img src={fav.Image} alt="" />
+                                    <h3>{fav.Title}</h3>
+                                </Link>
+                            </div>
+                        ))
                 ) : (
                     null
                 )
