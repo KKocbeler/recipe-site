@@ -1,15 +1,16 @@
-import React from 'react'
-import './Footer.css'
+import { FaSquareXTwitter } from 'react-icons/fa6'
+import './Footer.scss'
 import { Link } from 'react-router-dom'
+import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa'
 
 const Footer = () => {
   return (
     <>
         <footer>
-            <div className="footer-main container">
+            <div className="footer-main">
                 <div className="footer-sections">
                     <div>
-                        <h3> <Link> PARTNERSHİP </Link> </h3>
+                        <h3> PARTNERSHİP </h3>
                         <ul className='footer-ul'>
                             <li>
                                 <Link> Websites </Link>
@@ -23,7 +24,7 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div>
-                         <h3> <Link> ABOUT </Link> </h3> 
+                         <h3>ABOUT</h3> 
                          <ul className='footer-ul'>
                             <li>
                                 <Link> Our Projects </Link>
@@ -34,7 +35,7 @@ const Footer = () => {
                          </ul>
                      </div>
                      <div>
-                         <h3> <Link> SUPPORT </Link> </h3>
+                         <h3>SUPPORT</h3>
                          <ul  className='footer-ul'>
                             <li>
                                 <Link> Support Request </Link>
@@ -46,13 +47,13 @@ const Footer = () => {
                      </div>
                 </div>
                 <div className='social-links'>
-                    <Link><i className="fa-brands fa-twitter tw"></i></Link>
-                    <Link><i className="fa-brands fa-instagram ins"></i></Link>
-                    <Link><i className="fa-brands fa-facebook face"></i></Link>
-                    <Link><i className="fa-brands fa-youtube yt"></i></Link>
+                    <Link><FaSquareXTwitter /></Link>
+                    <Link><FaInstagram /></Link>
+                    <Link><FaFacebook /></Link>
+                    <Link><FaYoutube /></Link>
                 </div>
             </div>
-            <div className="footer-bottom container">
+            <div className="footer-bottom container-inner">
                 Copyright © 2023 - Kocbeler
                 <ul className="footer-menu">
                     <li><Link to={'/'}>Home</Link></li>
