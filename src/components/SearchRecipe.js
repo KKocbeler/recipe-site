@@ -1,20 +1,22 @@
-import React, { useState } from 'react'
-import './SearchRecipe.css'
+import { useState } from 'react'
+import './SearchRecipe.scss'
 import { useNavigate } from 'react-router-dom'
+import { IoIosSearch } from 'react-icons/io'
 
 const SearchRecipe = () => {
     const [keyword, setKeyword] = useState('')
     const navigate = useNavigate();
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if(keyword.trim() !== '') {
-            navigate(`/recipes/?q=${keyword}`)
+        if(keyword.trim().length > 3) {
+            navigate(`/recipes/?q=${encodeURIComponent(keyword)}`)
 
             setKeyword('')
         } else {
-            alert("Please enter a word.");
+            alert("Search query is too short. Please enter at least 4 characters.");
         }
     }
 
@@ -22,8 +24,8 @@ const SearchRecipe = () => {
     return (
         <div className='search rounded-bottom'>
             <form className="search-input" onSubmit={handleSubmit}>
-                <i className="fa-solid fa-magnifying-glass"></i>
-                <input type="text" placeholder='Search for a recipe' onChange={(e) => setKeyword(e.target.value)}/>
+                <button type='submit' aria-label='Search'><IoIosSearch /></button>
+                <input type="text" placeholder='Search for a recipe' value={keyword} onChange={(e) => setKeyword(e.target.value)}/>
             </form>
         </div>
     )
