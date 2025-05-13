@@ -12,7 +12,7 @@ const RecipeContextProvider = (props) => {
             const options = {
                 method: 'GET',
                 headers: {
-                    'X-RapidAPI-Key': 'e2d130b571mshd875073fff5b747p12e217jsne68d48a0c5a1',
+                    'X-RapidAPI-Key': '52c84b808bmsh3011dd83d5e47a9p1582bbjsnf10e135d46ea',
                     'X-RapidAPI-Host': 'food-recipes-with-images.p.rapidapi.com'
                 }
             };
@@ -28,7 +28,6 @@ const RecipeContextProvider = (props) => {
                 setRecipes(result.d);
             } catch (error) {
                 setError(error.message || "Bir hata oluştu");
-                console.error(error);
             }
         };
 
