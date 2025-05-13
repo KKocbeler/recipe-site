@@ -1,0 +1,96 @@
+#recipe-list {
+    margin: 10rem auto;
+
+    @media (max-width: 767px) {
+        margin: 6rem 0 ;
+    }
+    .searching-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+
+        @media (max-width: 767px) {
+            flex-direction: column;
+        }
+        .searching-for {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+
+            h4 {
+                font-size: 2.4rem;
+                font-weight: bold;
+                color: var(--secondary-color);
+
+                @media (max-width: 991px) {
+                    margin-left: .5rem;
+                }
+            }
+
+            p {
+                font-size: 2rem;
+                color: var(--effect-color);
+            }
+        }
+
+        .search-bar {
+            @media (max-width: 767px) {
+                width: 100%;
+            }
+            form {
+                position: relative;
+                margin: 2rem auto;
+                max-width: 40rem;
+                @media (max-width: 767px) {
+                    width: 100%;
+                }
+
+                input {
+                    width: 100%;
+                    padding: 1rem 3rem 1rem 1rem;
+                    border: 1px solid #ccc;
+                    border-radius: 2rem;
+                    font-size: 1rem;
+                    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+                    font-size: 1.5rem;
+
+                    &:focus {
+                        outline: none;
+                        border-color: var(--primary-color, #91683c);
+                        box-shadow: 0 0 0 4px rgba(145, 104, 60, 0.1);
+                    }
+                }
+
+                button {
+                    background: none;
+                    border: none;
+                    position: absolute;
+                    top: 50%;
+                    right: 1rem;
+                    transform: translateY(-50%);
+                    cursor: pointer;
+                    padding: 0;
+                    transition: transform 0.3s ease;
+
+                    svg {
+                        width: 2rem;
+                        height: 2rem;
+                        fill: var(--text-dark, #333);
+                        transition: fill 0.3s;
+                    }
+
+                    &:hover svg {
+                        fill: red;
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+
+    hr {
+        border: 1px solid #495E57;
+    }
+}
+
