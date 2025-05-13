@@ -1,0 +1,32 @@
+#error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding-top: 4rem;
+    width: 100%;
+    min-height: 60vh;
+    margin-top: 8rem;
+    
+    .oops {
+        font-size: 6rem;
+        font-weight: bold;
+        color: var(--secondary-color);
+    }
+
+    p {
+        font-size: 1.8rem;
+    }
+
+    .to-home {
+        border: 1px solid var(--secondary-color);
+        padding: 1rem 2rem;
+        transition: all .3s;
+        
+        &:hover {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+        }
+    }
+
+}
